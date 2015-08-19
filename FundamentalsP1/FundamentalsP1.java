@@ -1,4 +1,3 @@
-
 public class FundamentalsP1 
     {
   public static void main ( String args[] )
