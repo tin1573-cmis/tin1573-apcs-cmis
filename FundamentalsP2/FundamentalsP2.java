@@ -1,33 +1,24 @@
-
-/**
- * Write a description of class FundamentalsP2 here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
-public class FundamentalsP2
-{
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class FundamentalsP2
-     */
-    public FundamentalsP2()
+import javax.swing.JOptionPane;
+public class FundamentalsP2 
     {
-        // initialise instance variables
-        x = 0;
-    }
-
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
-    }
-}
+  public static void main ( String args[] )
+  {
+  
+   String input1 = JOptionPane.showInputDialog( "Choose a number.");
+   String input2 = JOptionPane.showInputDialog( "Choose another similar or different number.");
+   
+   double num1 = Float.parseFloat( input1 );
+   double num2 = Float.parseFloat( input2 );
+    
+   
+   if (num1 > num2)
+        {System.out.print(num1 + " is bigger than " + num2);
+        }
+   if (num1 < num2)
+        {System.out.print(num1 + " is smaller than " + num2);
+        }
+   if (num1 == num2)
+       {System.out.print(num1 + " and " + num2 + " are the same number");
+       }
+      } // end main
+} // end FundamentalsP2
