@@ -6,20 +6,13 @@ public class FundamentalsP9
         String user = JOptionPane.showInputDialog( "What is your user name?");
         String num = JOptionPane.showInputDialog( "What is your password?");
         int pass = Integer.parseInt( num );
-        if (user.equals("hahahahaha"))
+        if (user.equals("hahahahaha") && pass == (123456789))
         {
-            if (pass == (123456789))
-            {
-                System.out.println ( "You have successfully logged in." );
-            }
-            else
-            {
-                System.out.println ( "Your username and password does not match." );
-            }
+            System.out.println ( "You are now logged in." );
         }
         else
         {
-            System.out.println ( "Your username is not recognised, try again." );
+            System.out.println ( "Your username or password is incorrect, please try again." );
         }
     } // end main
 } // end FundamentalsP9

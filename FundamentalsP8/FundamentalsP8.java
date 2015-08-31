@@ -31,7 +31,7 @@ public class FundamentalsP8
             
             {
                 
-                System.out.println ( "We found Michael!!!!!!!!"); 
+                System.out.println ( "We found the king of POP!!!!!!!!"); 
                 
             }//end if
             
