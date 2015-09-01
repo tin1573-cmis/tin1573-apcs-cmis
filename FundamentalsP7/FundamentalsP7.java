@@ -32,6 +32,15 @@ public class FundamentalsP7
             index++;
         }// end while
         System.out.println("The number of positive integers are " + pos + ". The number of negative integers are " + neg + ".");
+        for ( int i = 0; i < num.length; i++)
+        {
+
+            if ( num [ i ] > 0)
+            {
+                System.out.print(num[i] + "\t");
+
+            }
+        }
 
     }   // end main
 } // end FundamentalsP7 
