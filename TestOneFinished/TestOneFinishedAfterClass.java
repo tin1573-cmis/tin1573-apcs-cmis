@@ -1,4 +1,3 @@
-// If I had 10 more minutes I could have finished it like this. 
 import javax.swing.JOptionPane;
 public class TestOneFinishedAfterClass
 {
@@ -9,39 +8,29 @@ public class TestOneFinishedAfterClass
         double[] array = new double[num];
         for( int index = 0; index < array.length; index++ )
         {
-            array[index] =((50*Math.random()));
-
-        }
-        for( int index = 0; index < array.length; index++ )
-        {
-            array[index] =((50*Math.random()));
-
+            array[index] =((51*Math.random()));
             System.out.println(index + ": " + array[index]);
-        }
+        }//end for
         int x = 0;
         for( int index = array.length -1 ; index >= 0 ; index-- )
         {
-
             x = (int)array[index];
-           System.out.print(index + ": ");
+            System.out.print(index + ": ");
             if (x%2==0)
             {
-
                 for (int i = 0; i < x; i++)
                 {
                     System.out.print( "E");
-                } 
-
-            }
-            if (x%2==1)
+                } //end for
+            }// end if
+            else
             {
                 for (int i = 0; i < x; i++)
                 {
                     System.out.print( "O");
-                } 
-            }
-            System.out.println(array[index]);
-        }
-        
+                } //end for
+            }// end if
+            System.out.println(" " + array[index]);
+        }//end for
     } // end main
 } // end Test1
