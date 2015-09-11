@@ -5,7 +5,7 @@ public class Histogram
     {
         String input = JOptionPane.showInputDialog( "Choose an integer");
         int num = Integer.parseInt( input );
-        String []count = new String[100];
+        int []count = new int[100];
         int []info = new int[num];
         int sum= 0;
         int min = 99;
@@ -14,25 +14,60 @@ public class Histogram
         {
             info[index] =((int)(100*Math.random())); 
             sum = sum + info[index];
-
         }
-        for ( int index = 0; index < 100; index++  )
+        for ( int index = 0 ; index < info.length; index++  )
         {
-
-            for ( int i = 0; i < 100; i++  )
+              int add = 0;
+            for (int i = 0; i < 100; i++ )
             {
-                if (index == count[i])
+              
+                if (info[index] == i )
                 {
-                    
+                    count[i] += 1;
                 }
+                 
             }
 
+         
         }
 
-        for ( int index = 0; index < info.length; index++ )
+        for ( int index = 0 ; index < count.length; index++  )
         {
-            System.out.print(count[index]);
+            System.out.println( count[index]);
         }
+        //for ( int index = 0; index < count.length; index++ )
+       // {
+     
+        //    for(int i = 0 ; i < count[index]; i++)
+       //     {
+       //         System.out.print("#");
+       //        
+      //      }
+      // //     System.out.println(index + ": ");
+     //   }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 
         for ( int index = 0; index < info.length; index++ )
         {
