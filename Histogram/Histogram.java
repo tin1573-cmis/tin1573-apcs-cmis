@@ -16,8 +16,8 @@ public class Histogram
         {
             info[index] =((int)(100*Math.random())); 
             sum = sum + info[index];
-
         }
+<<<<<<< HEAD
 
         for (   int index = 0; index < info.length; index++)
 
@@ -32,9 +32,24 @@ public class Histogram
                     count[i]= count[i] + 1  ;
                 }
 
+=======
+        for ( int index = 0 ; index < info.length; index++  )
+        {
+              int add = 0;
+            for (int i = 0; i < 100; i++ )
+            {
+              
+                if (info[index] == i )
+                {
+                    count[i] += 1;
+                }
+                 
+>>>>>>> origin/master
             }
 
+         
         }
+<<<<<<< HEAD
         for ( int index = 0; index < count.length; index++ )
         {
             System.out.print("\n" + index  +  ":" );
@@ -44,6 +59,46 @@ public class Histogram
             }  
 
         } 
+=======
+
+        for ( int index = 0 ; index < count.length; index++  )
+        {
+            System.out.println( count[index]);
+        }
+        //for ( int index = 0; index < count.length; index++ )
+       // {
+     
+        //    for(int i = 0 ; i < count[index]; i++)
+       //     {
+       //         System.out.print("#");
+       //        
+      //      }
+      // //     System.out.println(index + ": ");
+     //   }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+>>>>>>> origin/master
 
         for ( int index = 0; index < info.length; index++ )
         {
