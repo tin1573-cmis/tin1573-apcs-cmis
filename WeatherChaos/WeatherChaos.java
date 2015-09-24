@@ -4,20 +4,20 @@ public class WeatherChaos
     public static void main ( String args[] )
     {
         int input = Integer.parseInt(JOptionPane.showInputDialog("Type an integer: "));
-        int[] temp= new int[input];
-        System.out.println("day" + "\t" + "temp"+ "\t" + "swing" + "\t" + "description");
         String output="";
         int thisNum; 
         int min=100;
         int max=-99;
         int sum=0;
         int swing=0;
-        int output2=0; 
-        int output3=0;
-        int output4=0;
-        int output5=0;
+        int outMin=0; 
+        int outMax=0;
+        int outSwing1=0;
+        int outSwing2=0;
         if( input < 32 && input > 0)
         {
+            int[] temp= new int[input];
+            System.out.println("day" + "\t" + "temp"+ "\t" + "swing" + "\t" + "description");
             int i = 0;
             while(  i < temp.length )
             {
@@ -26,13 +26,13 @@ public class WeatherChaos
                 if ( thisNum < min )
                 {
                     min = thisNum;
-                    output2=i+1;
+                    outMin=i+1;
                 }
 
                 if ( thisNum > max )
                 {
                     max = thisNum;
-                    output3=i+1;
+                    outMax=i+1;
                 }
 
                 sum += thisNum;
@@ -86,28 +86,27 @@ public class WeatherChaos
                 i++;
 
             }//end while
+            for (int index=1; index<temp.length; index++)
+            {
+                if (Math.abs(temp[index-1]-temp[index])>swing)
+                {
+                    swing = Math.abs(temp[index-1]-temp[index]);
+                    outSwing1=index+1;
+                    outSwing2=index;
+                }//end if
+
+            }//end for
+            System.out.print(output);
+            System.out.println("The minimum temperature was " + min + " on day " + outMin);
+            System.out.println("The maximum temperature was " + max + " on day " + outMax);
+            System.out.println("The average temperature was " + (double) sum / (double) input);
+            System.out.println("The biggest temperature swing was " + swing + " degrees between days "+outSwing2+" and "+outSwing1);
 
         }//end if
         else
         {
-            System.out.print("That is not a valid number of days");
+            System.out.print("That is not a valid number of days.");
         }
-        for (int i=1; i<temp.length; i++)
-        {
-
-            if (Math.abs(temp[i-1]-temp[i])>swing)
-            {
-                swing = Math.abs(temp[i-1]-temp[i]);
-                output4=i-1;
-                output5=i;
-            }//end if
-
-        }//end for
-        System.out.print(output);
-        System.out.println("MIN: " + min + " on day" + output2);
-        System.out.println("MAX: " + max + " on day" + output3);
-        System.out.println("AVG: " + (double) sum / (double) input);
-        System.out.println("SWING: " + swing + "between day "+output4+"and day "+output5);
 
     } // end main
 } // end NAME
