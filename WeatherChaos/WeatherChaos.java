@@ -12,7 +12,7 @@ public class WeatherChaos
         int swing=0;
         int outMin=0; 
         int outMax=0;
-        int outSwing1=0;
+        int outSwing1=1;
         int outSwing2=0;
         if( input < 32 && input > 0)
         {
@@ -27,13 +27,13 @@ public class WeatherChaos
                 {
                     min = thisNum;
                     outMin=i+1;
-                }
+                }// end if
 
                 if ( thisNum > max )
                 {
                     max = thisNum;
                     outMax=i+1;
-                }
+                }// end if
 
                 sum += thisNum;
                 if(i== 0)
@@ -41,47 +41,47 @@ public class WeatherChaos
                     if(thisNum<=0)
                     {
                         output += i+1 + "\t" + temp[i] + "\t" + "0" + "\t"+ "Freezing"  + "\n"; 
-                    }
+                    }// end if
                     if(thisNum>0 && thisNum <=15 )
                     {
                         output += i+1 + "\t" + temp[i] + "\t" + "0" + "\t"+ "Chilly"  + "\n"; 
-                    }
+                    }// end if
                     if(thisNum>=16 && thisNum <=30 )
                     {
                         output += i+1 + "\t" + temp[i] + "\t" + "0" + "\t"+ "Comfortable"  + "\n"; 
-                    }
+                    }// end if
                     if(thisNum>=31 && thisNum <45 )
                     {
                         output += i+1 + "\t" + temp[i] + "\t" + "0" + "\t"+ "Hot"  + "\n"; 
-                    }
+                    }// end if
                     if(thisNum>=45)
                     {
                         output += i+1 + "\t" + temp[i] + "\t" + "0" + "\t"+ "Argghhhh!!!"  + "\n"; 
-                    }
-                }
+                    }// end if
+                }// end if
                 else
                 {
                     if(thisNum<=0)
                     {
                         output += i+1 + "\t" + temp[i] + "\t" + Math.abs(temp[i-1]-temp[i])+ "\t"+ "Freezing"  + "\n"; 
-                    }
+                    }// end if
                     if(thisNum>0 && thisNum <=15 )
                     {
                         output += i+1 + "\t" + temp[i] + "\t" + Math.abs(temp[i-1]-temp[i])+ "\t"+ "Chilly"  + "\n"; 
-                    }
+                    }// end if
                     if(thisNum>=16 && thisNum <=30 )
                     {
                         output += i+1 + "\t" + temp[i] + "\t" + Math.abs(temp[i-1]-temp[i])+  "\t"+ "Comfortable"  + "\n"; 
-                    }
+                    }// end if
                     if(thisNum>=31 && thisNum <45 )
                     {
                         output += i+1 + "\t" + temp[i] + "\t" + Math.abs(temp[i-1]-temp[i])+  "\t"+ "Hot"  + "\n"; 
-                    }
+                    }// end if
                     if(thisNum>=45)
                     {
                         output += i+1 + "\t" + temp[i] + "\t" + Math.abs(temp[i-1]-temp[i])+  "\t"+ "Argghhhh!!!"  + "\n"; 
-                    }
-                }
+                    }// end if
+                }// end else
 
                 i++;
 
@@ -106,7 +106,7 @@ public class WeatherChaos
         else
         {
             System.out.print("That is not a valid number of days.");
-        }
+        }// end else
 
     } // end main
 } // end NAME
