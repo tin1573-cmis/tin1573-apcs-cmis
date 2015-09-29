@@ -12,7 +12,7 @@ public class WeatherChaos
         int swing=0;
         int outMin=0; 
         int outMax=0;
-        int outSwing1=0;
+        int outSwing1=1;
         int outSwing2=0;
         if( input < 32 && input > 0)
         {
