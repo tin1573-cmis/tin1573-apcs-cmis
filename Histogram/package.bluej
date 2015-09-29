@@ -1,19 +1,34 @@
 #BlueJ package file
 objectbench.height=76
+<<<<<<< HEAD
 objectbench.width=658
 package.editor.height=401
 package.editor.width=560
 package.editor.x=441
 package.editor.y=90
+=======
+objectbench.width=686
+package.editor.height=400
+package.editor.width=560
+package.editor.x=301
+package.editor.y=125
+>>>>>>> f2f41a110fabde2f2224bec519c3ba78d6bc9370
 package.numDependencies=0
 package.numTargets=1
 package.showExtends=true
 package.showUses=true
 project.charset=UTF-8
+<<<<<<< HEAD
 target1.editor.height=780
 target1.editor.width=1378
 target1.editor.x=-3
 target1.editor.y=12
+=======
+target1.editor.height=754
+target1.editor.width=1382
+target1.editor.x=0
+target1.editor.y=0
+>>>>>>> f2f41a110fabde2f2224bec519c3ba78d6bc9370
 target1.height=50
 target1.name=Histogram
 target1.naviview.expanded=true

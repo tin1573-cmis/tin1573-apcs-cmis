@@ -81,7 +81,7 @@ public class Histogram
         System.out.println( "\n" + "Min: " + min );
         System.out.println( "Max: " + max );
         System.out.println( "Sum: " + sum );
-        System.out.println( "Average: " + sum / num);
+        System.out.println( "Average: " + (double)sum / (double)num);
         System.out.print( "Mst: " );
         for ( int index = 0; index < count.length; index++ )
         {
