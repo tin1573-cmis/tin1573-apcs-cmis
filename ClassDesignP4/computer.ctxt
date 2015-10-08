@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=computer()
+comment1.params=brand\ gaming\ rating
+comment1.target=computer(java.lang.String,\ boolean,\ double)
+comment2.params=
+comment2.target=java.lang.String\ toString()
+numComments=3

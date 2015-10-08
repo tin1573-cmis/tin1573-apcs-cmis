@@ -10,7 +10,7 @@ public class MyClock
         sec = 30;
         min = 59;
 
-    }
+    }//contructor
 
     public MyClock(int hr, int min, int sec )
     {
@@ -18,7 +18,7 @@ public class MyClock
         this.min = min;   
         this.sec = sec;
 
-    }
+    }//constructor
 
     public String toString()
     {
@@ -28,7 +28,7 @@ public class MyClock
 
         return output;
 
-    }
-}   
+    }//toString
+}  //instant variable 
 
  
