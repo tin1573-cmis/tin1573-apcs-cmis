@@ -3,8 +3,8 @@ public class ComputerDriver
 {
     public static void main (String args[])
     {
-        computer com1 = new computer("Alienware", true , 9.1 );
-        computer com2 = new computer();
+        Computer com1 = new Computer("Alienware", true , 9.1 );
+        Computer com2 = new Computer();
 
         System.out.println(com1);
         System.out.println(com2);

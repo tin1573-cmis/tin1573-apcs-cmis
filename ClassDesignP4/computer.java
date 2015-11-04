@@ -1,10 +1,10 @@
-public class computer
+public class Computer
 {
     private String brand;
     private boolean gaming;
     private double rating;
 
-    public computer()
+    public Computer()
     {
         brand = "Mac";
         gaming = false;
@@ -12,7 +12,7 @@ public class computer
 
     }//contructor
 
-    public computer(String brand, boolean gaming, double rating )
+    public Computer(String brand, boolean gaming, double rating )
     {
         this.brand = brand;
         this.gaming = gaming;   
