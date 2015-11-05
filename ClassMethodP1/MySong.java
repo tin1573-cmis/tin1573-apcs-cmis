@@ -1,9 +1,14 @@
+import javax.swing.JOptionPane;
 public class MySong
 {
+
     private String SongName;
     private double SongLength;
     private int ReleaseYear;
     String mins = "";
+    String user = JOptionPane.showInputDialog( "What is your user name?");
+    int pass = Integer.parseInt(JOptionPane.showInputDialog( "What is your password?"));
+
     public MySong()
     {
         SongName = new String( "PennyLane" );
@@ -13,12 +18,17 @@ public class MySong
 
     public int getReleaseYear()
     {
+
         return ReleaseYear;
+
     }
 
     public void setReleaseYear(int year)
     {
-        this.ReleaseYear=year;
+        if (user.equals("t") && pass == (1))
+        {
+            this.ReleaseYear=year;
+        }
     }
 
     public String convertToSecond()

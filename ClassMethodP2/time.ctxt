@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=
+comment0.target=time()
+comment1.params=hr\ min\ sec
+comment1.target=void\ setTime(int,\ int,\ int)
+comment2.params=dls
+comment2.target=int\ convertDLS(int)
+comment3.params=
+comment3.target=int\ convertToSec()
+comment4.params=
+comment4.target=java.lang.String\ toString()
+numComments=5
