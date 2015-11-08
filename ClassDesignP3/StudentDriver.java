@@ -1,5 +1,5 @@
 import javax.swing.JOptionPane;
-public class StudentDriver
+public class studentDriver
 {
     public static void main (String args[])
     {
