@@ -5,7 +5,8 @@ public class student
     private double science;
     private double fineArts;
     private double socialScience;
-    private double GPA;
+    private double GPA=0.0;
+    
     private double[] grade = new double [5];
     private String fname;
     private String lname;
@@ -18,42 +19,39 @@ public class student
         lname = "s";
         fname = "ss";
     }//contructor
-    public student(double english, double math, double science, double fineArts, double socialScience)
+    public student(String fname, String lname, double english, double math, double science, double fineArts, double socialScience)
     {
         for (int i=0; i < grade.length; i++)
         {
-            grade[i]=this.english;
-            grade[i]=this.math;
-            grade[i]=this.science;
-            grade[i]=this.fineArts;
-            grade[i]=this.socialScience;
-
+            grade[0]=this.english;
+            grade[1]=this.math;
+            grade[2]=this.science;
+            grade[3]=this.fineArts;
+            grade[4]=this.socialScience;
+            this.fname=fname;
+            this.lname=lname;
         }
     }
 
-    public int calcGPA(int GPA)
+    public double calcGPA()
     {
+
         for (int i=0; i> grade.length; i++)
         {
 
-            //GPA=GPA + grade[i];
+            GPA+= grade[i];
         }
-        return GPA/grade.length;
+        return GPA;
     }
 
     public String toString()
     {
-        String output = new String();
+        String output =
         String.format(
             "first name: %s\n" +
             "last name: %s\n" +
-            "english %f\n" + 
-            "math %f\n" + 
-            "science %f\n" + 
-            "gineArts %f\n" + 
-            "social science %f\n" +
-            "avg GPA- %f\n", 
-            fname, lname, english, math, science, fineArts, socialScience);
+            "avg GPA- %.2f\n", 
+            fname, lname,GPA);
 
         return output;
 

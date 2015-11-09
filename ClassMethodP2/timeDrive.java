@@ -6,11 +6,13 @@ public class timeDrive
         time clock= new time();
         clock.convertToSec();
         System.out.println(clock);
-        
+
         clock.setTime(2,33,11 );
         clock.convertToSec();
-        
-        clock.convertDLS();
+        System.out.println(clock);
+
+        clock.convertDLS(1);
+        clock.convertToSec();
         System.out.println(clock);
     }
 }

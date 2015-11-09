@@ -26,17 +26,10 @@ public class time
         return secs;
     }
 
-    public int convertDLS()
+    public int convertDLS(int hrs)
     {
-        if (hr>=12)
-        {
-            hr = hr+1;  
-        }
-        else 
-        {
-            hr=hr-1;
-        }
-        return hr;
+        hrs=hrs+hr;
+        return hrs;
     }
 
     public String toString()
