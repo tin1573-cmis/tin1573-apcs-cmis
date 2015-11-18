@@ -14,4 +14,7 @@ public class Uni {
         System.out.println(school3.compareTo( school1 ));
     }   
 }
-//
+//1. it is telling us how far apart the beginning letters are from each other
+//2.  if the first letters are the same then it will tell the difference of the proceeding
+//  number that is different. and if one is capital and the other is lower case they will add 27 
+//   add 6 to the difference.
