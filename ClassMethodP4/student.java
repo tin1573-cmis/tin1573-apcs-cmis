@@ -1,49 +1,82 @@
 public class student
 {
-    private double GPA;
-    private String grade="";
+    private double english;
+    private double math;
+    private double science;
+    private double fineArts;
+    private double socialScience;
+    private double[] grade = new double [5];
+
     private String fname;
     private String lname;
-
-    public student(String fname, String lname)
+    public student()
     {
+        for (int i=0; i < grade.length; i++)
+        {
+            grade[i]=0.0;
+        }
+        lname = "s";
+        fname = "ss";
+    }//contructor
+    public student(String fname, String lname, double english, double math, double science, double fineArts, double socialScience)
+    {
+
+        grade[0]=english;
+        grade[1]=math;
+        grade[2]=science;
+        grade[3]=fineArts;
+        grade[4]=socialScience;
         this.fname=fname;
         this.lname=lname;
-        this.grade=grade;
+
     }
 
-
-    public double getGPA()
+    public void setGPA(double english, double math, double science, double fineArts, double socialScience)
     {
+        this.grade[0]=english;
+        this.grade[1]=math;
+        this.grade[2]=science;
+        this.grade[3]=fineArts;
+        this.grade[4]=socialScience;
+    }
+    double GPA = 0;
+    public double calcGPA()
+    {
+        double GPA = 0;
+        for (int i=0; i< grade.length; i++)
+        {
+
+            GPA += grade[i];
+        }
+
         return GPA;
-    }
 
-    public void setGPA(double GPA)
+    }
+    String gradeL;
+    public void setGPA()
     {
-        this.GPA=GPA;
-        if(GPA >= 4)
+
+        if(calcGPA()/grade.length >= 4)
         {
-            grade="A";
+            gradeL="A";
         }
-        else if (GPA >= 3)
+        else if (calcGPA()/grade.length >= 3)
         {
-            grade="B";
+            gradeL="B";
         }
-        else if (GPA >= 2)
+        else if (calcGPA()/grade.length >= 2)
         {
-            grade="C";
+            gradeL="C";
         }
-        else if (GPA >= 1)
+        else if (calcGPA()/grade.length >= 1)
         {
-            grade="D";
+            gradeL="D";
         }
         else
         {
-            grade="F";
+            gradeL="F";
         }
     }
-
-   
 
     public String toString()
     {
@@ -51,12 +84,18 @@ public class student
             String.format(
                 "first name: %s\n" +
                 "last name: %s\n" +
-                "avgGPA: %.2f\n" +
-                "grade: %s" , 
-                fname, lname, GPA, grade);
+                "letter grade: %s\n" +
+                "avg GPA- %.2f\n" +
+                "  %.2f" + 
+                "  %.2f" +
+                "  %.2f"+ 
+                "  %.2f" +
+                "  %.2f", 
+                fname, lname,gradeL, calcGPA()/grade.length,grade[0], grade[1], grade[2], grade[3],grade[4]);
 
         return output;
 
     }//toString
 }  //instant variable 
 
+ 

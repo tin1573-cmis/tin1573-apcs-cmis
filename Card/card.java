@@ -1,8 +1,9 @@
 public class card
 {
-    private String suit;
-    private String rank;
-    private int point;
+    String[] ranks = { "A", "2", "3", "4", "5", "6","7", "8", "9", "10", "J", "Q", "K"};
+    String[] suits = { "♥", "♦", "♠" ,"♣"};
+    private String rank, suit;
+    
     public card(String suit, String rank)
     {
         this.suit=suit;
@@ -11,7 +12,20 @@ public class card
 
     int getScore()
     {
-        return score;
+        int value;
+        if(rank.equals("J") || rank.equals("Q") || rank.equals("K"))
+        {
+            value = 10;
+        }
+        else if(rank.equals("A"))
+        {
+            value = 11;
+        }
+        else
+        {
+            value = Integer.parseInt(rank);
+        }
+        return value;
     }
 
     public String toString()

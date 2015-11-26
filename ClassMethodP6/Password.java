@@ -25,6 +25,10 @@ public class Password
         {
             System.out.println("reject");
         }
+        else
+        {
+            System.out.println("accept");
+        }
     }    
 }
 

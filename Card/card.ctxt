@@ -1,6 +1,6 @@
 #BlueJ class context
-comment0.params=suit\ rank\ point
-comment0.target=card(java.lang.String,\ java.lang.String,\ int)
+comment0.params=suit\ rank
+comment0.target=card(java.lang.String,\ java.lang.String)
 comment1.params=
 comment1.target=int\ getScore()
 comment2.params=

@@ -28,8 +28,8 @@ public class time
 
     public int convertDLS(int hrs)
     {
-        hrs=hrs+hr;
-        return hrs;
+        hr=hrs+hr;
+        return hr;
     }
 
     public String toString()

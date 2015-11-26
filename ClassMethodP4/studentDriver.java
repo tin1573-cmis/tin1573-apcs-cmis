@@ -3,19 +3,15 @@ public class studentDriver
 {
     public static void main (String args[])
     {
+        student senior1 = new student();
+        student senior2 = new student("joe", "senior", 4.0, 4.0, 3.5, 4.0, 4.0);
+        senior1.setGPA();
+        senior2.setGPA();
 
-        
-        student senior2 = new student("joe", "senior");
-        senior2.setGPA(4.0);   
-        
-        student senior1 = new student( "junior", "sdsd");
-        senior1.setGPA(3.00);  
-
-        
-        System.out.println(senior2);
-
-        
         System.out.println(senior1);
-
+        System.out.println(senior2);
+        senior2.setGPA(4.0, 4.0, 4.0, 4.0, 4.0);
+        senior2.setGPA();
+        System.out.println(senior2);
     }
 }
