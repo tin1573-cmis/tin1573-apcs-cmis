@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=a\ b\ c
+comment0.target=Pythagorean(double,\ double,\ double)
+comment1.params=
+comment1.target=double[]\ getAandBandC()
+comment2.params=newA\ newB\ newC
+comment2.target=void\ setAandBandC(double,\ double,\ double)
+comment3.params=
+comment3.target=double[]\ calc()
+comment4.params=
+comment4.target=java.lang.String\ toString()
+numComments=5

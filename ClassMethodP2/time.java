@@ -9,7 +9,7 @@ public class time
         hr=2;
         min=1;
         sec=1;
-        secs=secs;
+        
     }
 
     public void setTime(int hr, int min, int sec)
@@ -17,7 +17,6 @@ public class time
         this.hr=hr;
         this.min=min;
         this.sec=sec;
-        this.secs=secs;
     }
 
     public int convertToSec ()
