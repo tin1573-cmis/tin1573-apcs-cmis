@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=numCards
+comment0.target=Deck(int)
+comment1.params=hand
+comment1.target=void\ deal(Hand)
+comment2.params=hand\ numCards
+comment2.target=void\ deal(Hand,\ int)
+comment3.params=hands\ numCards
+comment3.target=void\ deal(Hand[],\ int)
+numComments=4

@@ -26,7 +26,7 @@ public class Pythagorean
 
     public double[] calc()
     {
-        if (a == 0)
+        if (a == 0 )
         {
             a=Math.sqrt(((c*c)-(b*b)));
         }
@@ -51,7 +51,7 @@ public class Pythagorean
                 "a: %f\n" +
                 "b: %f\n" +
                 "c: %f\n"  
-            , a ,b ,c); 
+                , a ,b ,c); 
 
         return result;
 

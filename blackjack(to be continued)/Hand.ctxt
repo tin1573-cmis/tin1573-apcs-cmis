@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=maxCards
+comment0.target=Hand(int)
+comment1.params=
+comment1.target=int\ evaluate()
+comment2.params=card
+comment2.target=void\ addCard(Card)
+comment3.params=otherHand
+comment3.target=boolean\ compare(Hand)
+numComments=4
