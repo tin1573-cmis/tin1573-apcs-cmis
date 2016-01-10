@@ -1,6 +1,14 @@
 #BlueJ class context
-comment0.params=lightSaber\ forcePower\ fname\ lname\ side\ type
-comment0.target=void\ setTime(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
+comment0.params=lightSaber\ forcePower\ fname\ lname\ side
+comment0.target=SithJedi(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
 comment1.params=
-comment1.target=java.lang.String\ toString()
-numComments=2
+comment1.target=java.lang.String\ calcSide()
+comment2.params=
+comment2.target=java.lang.String\ calcName()
+comment3.params=
+comment3.target=java.lang.String\ calcColour()
+comment4.params=
+comment4.target=java.lang.String\ calcPower()
+comment5.params=
+comment5.target=java.lang.String\ toString()
+numComments=6

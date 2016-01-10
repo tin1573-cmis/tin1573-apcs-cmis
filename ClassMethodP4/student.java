@@ -43,7 +43,7 @@ public class student
     public double calcGPA()
     {
         double GPA = 0;
-        for (int i=0; i< grade.length; i++)
+        for (int i=0; i< gra de.length; i++)
         {
 
             GPA += grade[i];
