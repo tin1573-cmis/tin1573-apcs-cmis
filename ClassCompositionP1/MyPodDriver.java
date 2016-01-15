@@ -1,33 +1,18 @@
 
-/**
- * Write a description of class MyPodDriver here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class MyPodDriver
 {
-    // instance variables - replace the example below with your own
-    private int x;
 
-    /**
-     * Constructor for objects of class MyPodDriver
-     */
-    public MyPodDriver()
+    public static void main (String args[])
     {
-        // initialise instance variables
-        x = 0;
-    }
+        String[] songLibrary = {"To Love Somebody", "How Deep is Your Love", "Radioctive"};
+        MyPod carPod = new MyPod("neon blue", 256, songLibrary[0], songLibrary[1], songLibrary[2]  );
+        MyPod pod2 = new MyPod();
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+        System.out.println(carPod);
+        System.out.println(pod2);
+        for ( String song: songLibrary)
+        {
+            System.out.println(song);
+        }
     }
 }
