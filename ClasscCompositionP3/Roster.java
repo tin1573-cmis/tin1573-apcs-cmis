@@ -2,7 +2,7 @@
 public class Roster
 {
     private Student[] StudentList;
-     public Roster()
+    public Roster()
     {
         this.StudentList= new Student[3];
         StudentList[0] = new Student( 12, 3, "a" );
