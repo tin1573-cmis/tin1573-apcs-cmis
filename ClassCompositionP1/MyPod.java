@@ -26,17 +26,20 @@ public class MyPod
     {
         String output =
             String.format(
-                "color: %s\n" +
+                "\ncolor: %s\n" +
                 "memory: %d\n" +
                 "song1: %s\n" +
                 "song2: %s\n"+
                 "song3: %s\n" ,
 
                 color, memory, songLibrary[0], songLibrary[1], songLibrary[2]);
-
+        for ( String song: songLibrary)
+        {
+           output+= "\n" + song;
+        }
         return output;
 
     }//toString
-    
+
 }  //instant variable 
 

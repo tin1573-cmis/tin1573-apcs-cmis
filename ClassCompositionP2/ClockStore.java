@@ -5,22 +5,24 @@ public class ClockStore
     public ClockStore()
     {
         this.clocksInStock= new clock[3];
-        clocksInStock[0] = new clock( 12, 30, 45 );
-        clocksInStock[1] = new clock( 11, 32, 42 );
-        clocksInStock[2] = new clock( 10, 34, 41 );
+        clocksInStock[0] = new clock( 133, 30, 45 );
+        clocksInStock[1] = new clock( 1366, 32, 42 );
+        clocksInStock[2] = new clock( 1, 34, 41 );
     }
 
     public int mostSecs()
     {
         int most=0;
+        int max=0;
         for (int i=0; i<clocksInStock.length; i++)
         {
             if (clocksInStock[i].convertToSec()>most)
             {
-                most = clocksInStock[i].convertToSec();
+               most = clocksInStock[i].convertToSec();
+               max=i+1;
             }
         }
-        return most;
+        return max;
     }
 
     public String toString()
