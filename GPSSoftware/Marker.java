@@ -22,7 +22,7 @@ public class Marker
     public String toString()
     {
         String result = String.format( 
-                "x: %d\n" +
+                "x: %d " +
                 "y: %d\n",
                 x, y);
 

@@ -1,2 +1,10 @@
 #BlueJ class context
-numComments=0
+comment0.params=x\ y
+comment0.target=Marker(int,\ int)
+comment1.params=
+comment1.target=int\ getX()
+comment2.params=
+comment2.target=int\ getY()
+comment3.params=
+comment3.target=java.lang.String\ toString()
+numComments=4

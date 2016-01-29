@@ -19,30 +19,23 @@ public class GPSSoftware
         Trail.add(new Marker(12,100));
 
     }
-
-    public void addStudent ( Student newStudent )
+    
+    public GPSSoftware(ArrayList<Marker> Trail)
     {
-        StudentList.add(newStudent);
+        this.Trail=Trail;
     }
-
-    public void dropStudent ( String name ) 
+    
+    public void addMarker ( Marker newMarker )
     {
-        for(int i=0; i<StudentList.size(); i++)
-        {
-            if(StudentList.get(i).getName().equals(name))
-            {
-                StudentList.remove(StudentList.get(i));
-            }
-        }
-
+        Trail.add(newMarker);
     }
 
     public String toString()
     {
-        String output = "";
-        for (Student Student : StudentList)
+        String output = "Trail \n";
+        for (Marker marker : Trail)
         {
-            output+= Student;
+            output+= marker;
         }
         return output;
 
