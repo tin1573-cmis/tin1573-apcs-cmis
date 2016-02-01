@@ -22,8 +22,8 @@ public class Marker
     public String toString()
     {
         String result = String.format( 
-                "x: %d " +
-                "y: %d\n",
+                "\nx: %d " +
+                "y: %d",
                 x, y);
 
         return result;
