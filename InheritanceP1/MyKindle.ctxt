@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=
+comment0.target=MyKindle()
+comment1.params=memory\ color\ numOfBooks
+comment1.target=MyKindle(int,\ java.lang.String,\ int)
+comment2.params=num
+comment2.target=void\ setNumOfBooks(int)
+comment3.params=
+comment3.target=int\ getNumOfBooks()
+comment4.params=
+comment4.target=java.lang.String\ toString()
+numComments=5

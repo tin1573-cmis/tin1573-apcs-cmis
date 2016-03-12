@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=
+comment0.target=MyHatScreen()
+comment1.params=memory\ color\ headSize\ screenSize
+comment1.target=MyHatScreen(int,\ java.lang.String,\ int,\ int)
+comment2.params=num
+comment2.target=void\ setHeadSize(int)
+comment3.params=
+comment3.target=int\ getHeadSize()
+comment4.params=num
+comment4.target=void\ setScreenSize(int)
+comment5.params=
+comment5.target=int\ getScreenSize()
+comment6.params=
+comment6.target=java.lang.String\ toString()
+numComments=7

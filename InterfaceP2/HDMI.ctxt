@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=HDMI()
+comment1.params=
+comment1.target=java.lang.String\ connectHDMI()
+comment2.params=
+comment2.target=java.lang.String\ tvType()
+numComments=3
