@@ -49,6 +49,7 @@ public class SuperDriver
         }
 
         System.out.println();
+
         for (SuperHero[] row : capeHero )
         {
             for (SuperHero superHero : row)
@@ -56,6 +57,13 @@ public class SuperDriver
                 System.out.print( superHero  + " ");
             }
             System.out.println();
+        }
+
+        System.out.println();
+
+        for (SuperHero hero : heroes)
+        {
+            System.out.println(hero);
         }
     }
 }

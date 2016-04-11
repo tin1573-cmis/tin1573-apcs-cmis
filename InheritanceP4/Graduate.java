@@ -7,7 +7,7 @@ public class Graduate extends Student
     
     public int calculateTuition(int units)
     {
-        int price = units * 250;
+        int price = units * 500;
         return price;
     }
     

@@ -61,6 +61,7 @@ public class StudentDriver
             System.out.println();
         }
 
+        System.out.println();
         
         for (Student student : studentBody )
         {
