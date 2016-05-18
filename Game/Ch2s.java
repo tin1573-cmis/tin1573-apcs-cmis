@@ -5,11 +5,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, and Greenfoot)
  * for other actors that should be able to move left and right, jump up and fall 
  * down.
  */
-public class Ch2s extends Ch
+public class Ch2s extends Ch implements Shoot, Health
+
 {
     private boolean jumping;
     private int vSpeed = 0;
     private int health = 100;
+    int timer2 = 0;
+    int timer1 = 0;
 
     public void act() 
     {
@@ -19,21 +22,37 @@ public class Ch2s extends Ch
         regen();
         dead();
         dead2();
+        Change();
+        DeathxTwo();
     }
 
-    private int getHealth()
+    private void Change()
+    {
+        if(getWorld()!=null)
+        {
+            if (isTouching(Change.class))
+            {
+                Actor actor = getOneIntersectingObject(Change.class);
+                getWorld().removeObject(actor);
+                getWorld().addObject(new SuperCh2(), getX(), getY());
+                getWorld().removeObject(this);
+            }
+        }
+    }
+
+    public int getHealth()
     {
         return health;
     }
 
-    private void loseHealth()
+    public void loseHealth()
     {
 
         this.health +=-1;
 
     }
 
-    private void gainHealth()
+    public void gainHealth()
     {
         this.health+= 10;
     }
@@ -48,35 +67,79 @@ public class Ch2s extends Ch
         }
     }
 
-    private void dead()
+    public void dead()
     {
-        if (isTouching(b3.class))
+        if(getWorld()!=null)
         {
-            loseHealth();
-            loseHealth();
-            loseHealth();
-            loseHealth();
-            loseHealth();
-            Actor actor = getOneIntersectingObject(b3.class);
-            getWorld().removeObject(actor);
-        }
-        if (health == 0)
-        {
-            getWorld().removeObject(this);
+            if (isTouching(b3.class))
+            {
+                loseHealth();
+                loseHealth();
+                loseHealth();
+                loseHealth();
+                loseHealth();
+                loseHealth();
+                loseHealth();
+                loseHealth();
+                loseHealth();
+                loseHealth();
+                loseHealth();
+                loseHealth();
+                loseHealth();
+                loseHealth();
+                loseHealth();
+                Actor actor = getOneIntersectingObject(b3.class);
+                getWorld().removeObject(actor);
+            }
+            if (health <= 0)
+            {
+                getWorld().removeObject(this);
+            }
         }
     }
 
-    private void dead2()
+    private void DeathxTwo()
     {
-        if (isTouching(b1.class))
+        if(getWorld()!=null)
         {
-            loseHealth();
-            Actor actor = getOneIntersectingObject(b1.class);
-            getWorld().removeObject(actor);
+            if(getWorld()!=null)
+            {
+                if (isTouching(FallingObject.class))
+                {
+                    int h=health/2;
+                    for(int i = 0; i<h ; i++)
+                    {
+                        loseHealth();
+                    }
+                    Actor actor = getOneIntersectingObject(b2.class);
+                    getWorld().removeObject(actor);
+                }
+                if (health <= 0)
+                {
+                    getWorld().removeObject(this);
+                }
+            }
         }
-        if (health == 0)
+    }
+
+    public void dead2()
+    {
+        if(getWorld()!=null)
         {
-            getWorld().removeObject(this);
+            if (isTouching(b1.class))
+            {
+                loseHealth();
+                loseHealth();
+                loseHealth();
+                loseHealth();
+                loseHealth();
+                Actor actor = getOneIntersectingObject(b1.class);
+                getWorld().removeObject(actor);
+            }
+            if (health <= 0)
+            {
+                getWorld().removeObject(this);
+            }
         }
     }
 
@@ -103,42 +166,54 @@ public class Ch2s extends Ch
         {
             fireFast();
         }
-        if ("g".equals(Greenfoot.getKey()))
+        if (Greenfoot.isKeyDown("g") )
         {
             fireSlow();
         }
 
     }    
 
-    private void fireFast()
+    public void fireFast()
     {
         b2 ammo = new b2();
-        if(getRotation()==0)
-        {
-            getWorld().addObject(ammo, getX()+40, getY());
-        }
-        else if (getRotation()==180)
-        {
-            getWorld().addObject(ammo, getX()-40, getY());
-        }
-        ammo.setRotation(getRotation());
 
+        if(timer1!= 0)
+        { timer1 --;}
+        if (timer1 == 0)
+        {
+            timer1 += 5;
+            if(getRotation()==0)
+            {
+                getWorld().addObject(ammo, getX()+40, getY());
+            }
+            else if (getRotation()==180)
+            {
+                getWorld().addObject(ammo, getX()-40, getY());
+            }
+            ammo.setRotation(getRotation());
+
+        }
     }
 
-    private void fireSlow()
+    public void fireSlow()
     {
         b4 ammo = new b4();
-        if(getRotation()==0)
+        if(timer2!= 0)
+        { timer2 --;}
+        if (timer2 == 0)
         {
-            getWorld().addObject(ammo, getX()+40, getY());
-        }
-        else if (getRotation()==180)
-        {
-            getWorld().addObject(ammo, getX()-40, getY());
-        }
-        
-        ammo.setRotation(getRotation());
+            timer2 += 25;
+            if(getRotation()==0)
+            {
+                getWorld().addObject(ammo, getX()+40, getY());
+            }
+            else if (getRotation()==180)
+            {
+                getWorld().addObject(ammo, getX()-40, getY());
+            }
 
+            ammo.setRotation(getRotation());
+        }
     }
 
     public void jump()
@@ -146,14 +221,15 @@ public class Ch2s extends Ch
         super.jump();
     }
 
+    private int speed = 5;
     public void moveRight()
     {
-        super.moveRight();
+        setLocation ( getX() + speed, getY() );
     }
 
     public void moveLeft()
     {
-        super.moveLeft();
+        setLocation ( getX() - speed, getY() );
     }
 
     public void checkFall()

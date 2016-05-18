@@ -12,7 +12,7 @@ public class Ch extends Actor
     private int vSpeed = 0;
     private int acceleration = 1;
     private boolean jumping;
-    private int jumpStrength =17;
+    private int jumpStrength =15;
     private int speed = 4;
     public void act() 
     {
@@ -43,12 +43,12 @@ public class Ch extends Actor
 
     public void moveRight()
     {
-        setLocation ( getX() + speed, getY() );
+       
     }
 
     public void moveLeft()
     {
-        setLocation ( getX() - speed, getY() );
+       
     }
 
     public boolean onGround()
