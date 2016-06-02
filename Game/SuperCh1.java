@@ -24,25 +24,55 @@ public class SuperCh1 extends SuperCh implements Shoot, Health
         dead2();
         super.act();
         DeathxTwo();
+        if(getWorld()!=null)
+        {
+
+            if (getY()>=getWorld().getHeight()-5)
+            {
+                for(int i=100; i>0;i--)
+                {
+                    loseHealth();
+                }
+                if(health <= 0)
+                {
+                 World world;
+                world = getWorld();
+                getWorld().removeObject(this);
+                GameOver go = new GameOver();
+                world.addObject(go,500,500);
+                Greenfoot.stop();
+                }
+            }
+        }
     }
+
     private void DeathxTwo()
     {
-        if (isTouching(FallingObject.class))
+        if(getWorld()!=null)
         {
-            int h=health/2;
-            for(int i = 0; i<h ; i++)
+            if (isTouching(FallingObject.class))
             {
-                loseHealth();
+                int h=health/2;
+                for(int i = 0; i<h ; i++)
+                {
+                    loseHealth();
+                }
+                Actor actor = getOneIntersectingObject(b2.class);
+                getWorld().removeObject(actor);
             }
-            Actor actor = getOneIntersectingObject(b2.class);
-            getWorld().removeObject(actor);
-        }
-        if (health <= 0)
-        {
-            getWorld().removeObject(this);
+            if (health <= 0)
+            {
+                World world;
+                world = getWorld();
+                getWorld().removeObject(this);
+                GameOver go = new GameOver();
+                world.addObject(go,500,500);
+                Greenfoot.stop();
+            }
         }
     }
-     public void gainHealth()
+
+    public void gainHealth()
     {
         this.health+= 10;
     }
@@ -62,7 +92,7 @@ public class SuperCh1 extends SuperCh implements Shoot, Health
         return health;
     }
 
-     public void loseHealth()
+    public void loseHealth()
     {
 
         this.health +=-1;
@@ -83,6 +113,20 @@ public class SuperCh1 extends SuperCh implements Shoot, Health
             getWorld().removeObject(actor);
         }
         if (health <= 0)
+            {
+                World world;
+                world = getWorld();
+                getWorld().removeObject(this);
+                GameOver go = new GameOver();
+                world.addObject(go,500,500);
+                Greenfoot.stop();
+            }
+
+    }
+
+    public void die()
+    {
+        if (health <= 0)
         {
             getWorld().removeObject(this);
         }
@@ -97,9 +141,15 @@ public class SuperCh1 extends SuperCh implements Shoot, Health
             getWorld().removeObject(actor);
         }
         if (health <= 0)
-        {
-            getWorld().removeObject(this);
-        }
+            {
+                World world;
+                world = getWorld();
+                getWorld().removeObject(this);
+                GameOver go = new GameOver();
+                world.addObject(go,500,500);
+                Greenfoot.stop();
+            }
+
     }
 
     private void checkKeys()
@@ -153,7 +203,7 @@ public class SuperCh1 extends SuperCh implements Shoot, Health
         }
     }
 
-     public void fireSlow()
+    public void fireSlow()
     {
 
         b3 ammo = new b3();

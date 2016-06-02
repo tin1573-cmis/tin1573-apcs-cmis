@@ -6,9 +6,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Ch extends Actor
+public abstract class Ch extends Actor
 {
-    
+
     private int vSpeed = 0;
     private int acceleration = 1;
     private boolean jumping;
@@ -18,7 +18,8 @@ public class Ch extends Actor
     {
 
         checkFall();
-
+        World world=(World)getWorld();
+        
     }
 
     public void jump()
@@ -28,27 +29,29 @@ public class Ch extends Actor
         fall();
     }
 
-
     public void checkFall()
     {
-        if(onGround())
+        if(getWorld()!=null)
         {
-            vSpeed = 0;
-        }
-        else
-        {
-            fall();
+            if(onGround())
+            {
+                vSpeed = 0;
+            }
+            else
+            {
+                fall();
+            }
         }
     }
 
     public void moveRight()
     {
-       
+
     }
 
     public void moveLeft()
     {
-       
+
     }
 
     public boolean onGround()
@@ -56,7 +59,6 @@ public class Ch extends Actor
         Object under = getOneObjectAtOffset(0, getImage().getHeight()/2-8 , null);
         return under != null;
     }
-
 
     public void fall()
     {
@@ -69,7 +71,6 @@ public class Ch extends Actor
 
     }
 
-
     public void moveToGround(Actor ground)
     {
         int groundHeight = ground.getImage().getHeight();
@@ -78,5 +79,4 @@ public class Ch extends Actor
         jumping = false;
     }
 
-   
 }

@@ -6,50 +6,44 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, and Greenfoot)
  * down.
  */
 public class Ch2s extends Ch implements Shoot, Health
-
 {
     private boolean jumping;
     private int vSpeed = 0;
     private int health = 100;
-    int timer2 = 0;
-    int timer1 = 0;
 
+    int timer1 = 0;
+    int timer2 = 0;
     public void act() 
     {
         checkKeys();        
-        super.act();
         getHealth();
         regen();
         dead();
         dead2();
         Change();
+        super.act();
         DeathxTwo();
-    }
-
-    private void Change()
-    {
-        if(getWorld()!=null)
+           if(getWorld()!=null)
         {
-            if (isTouching(Change.class))
+           
+            if (getY()>=getWorld().getHeight()-5)
             {
-                Actor actor = getOneIntersectingObject(Change.class);
-                getWorld().removeObject(actor);
-                getWorld().addObject(new SuperCh2(), getX(), getY());
-                getWorld().removeObject(this);
+                for(int i=100; i>0;i--)
+                {
+                    loseHealth();
+                }
+                if (health <= 0)
+            {
+                World world;
+                world = getWorld();
+                
+                GameOver go = new GameOver();
+                world.addObject(go,500,500);
+                 getWorld().removeObject(this);
+                Greenfoot.stop();
+            }
             }
         }
-    }
-
-    public int getHealth()
-    {
-        return health;
-    }
-
-    public void loseHealth()
-    {
-
-        this.health +=-1;
-
     }
 
     public void gainHealth()
@@ -67,7 +61,19 @@ public class Ch2s extends Ch implements Shoot, Health
         }
     }
 
-    public void dead()
+    public int getHealth()
+    {
+        return health;
+    }
+
+    public void loseHealth()
+    {
+
+        this.health +=-1;
+
+    }    
+
+    public void dead2()
     {
         if(getWorld()!=null)
         {
@@ -88,12 +94,18 @@ public class Ch2s extends Ch implements Shoot, Health
                 loseHealth();
                 loseHealth();
                 loseHealth();
-                Actor actor = getOneIntersectingObject(b3.class);
+                Actor actor = getOneIntersectingObject(b4.class);
                 getWorld().removeObject(actor);
             }
             if (health <= 0)
             {
-                getWorld().removeObject(this);
+                World world;
+                world = getWorld();
+             
+                GameOver go = new GameOver();
+                world.addObject(go,500,500);
+                 getWorld().removeObject(this);
+                Greenfoot.stop();
             }
         }
     }
@@ -102,27 +114,30 @@ public class Ch2s extends Ch implements Shoot, Health
     {
         if(getWorld()!=null)
         {
-            if(getWorld()!=null)
+            if (isTouching(FallingObject.class))
             {
-                if (isTouching(FallingObject.class))
+                int h=health/2;
+                for(int i = 0; i<h ; i++)
                 {
-                    int h=health/2;
-                    for(int i = 0; i<h ; i++)
-                    {
-                        loseHealth();
-                    }
-                    Actor actor = getOneIntersectingObject(b2.class);
-                    getWorld().removeObject(actor);
+                    loseHealth();
                 }
-                if (health <= 0)
-                {
-                    getWorld().removeObject(this);
-                }
+                Actor actor = getOneIntersectingObject(b2.class);
+                getWorld().removeObject(actor);
+            }
+           if (health <= 0)
+            {
+                World world;
+                world = getWorld();
+              
+                GameOver go = new GameOver();
+                world.addObject(go,500,500);
+                 getWorld().removeObject(this);
+                Greenfoot.stop();
             }
         }
     }
 
-    public void dead2()
+    public void dead()
     {
         if(getWorld()!=null)
         {
@@ -133,11 +148,31 @@ public class Ch2s extends Ch implements Shoot, Health
                 loseHealth();
                 loseHealth();
                 loseHealth();
-                Actor actor = getOneIntersectingObject(b1.class);
+                Actor actor = getOneIntersectingObject(b2.class);
                 getWorld().removeObject(actor);
             }
             if (health <= 0)
             {
+                World world;
+                world = getWorld();
+               
+                GameOver go = new GameOver();
+                world.addObject(go,500,500);
+                 getWorld().removeObject(this);
+                Greenfoot.stop();
+            }
+        }
+    }
+
+    private void Change()
+    {
+        if(getWorld()!=null)
+        {
+            if (isTouching(Change.class))
+            {
+                Actor actor = getOneIntersectingObject(Change.class);
+                getWorld().removeObject(actor);
+                getWorld().addObject(new SuperCh2(), getX(), getY());
                 getWorld().removeObject(this);
             }
         }
@@ -162,6 +197,7 @@ public class Ch2s extends Ch implements Shoot, Health
                 jump();
             }
         }
+
         if (Greenfoot.isKeyDown("f") )
         {
             fireFast();
@@ -170,7 +206,6 @@ public class Ch2s extends Ch implements Shoot, Health
         {
             fireSlow();
         }
-
     }    
 
     public void fireFast()
@@ -181,22 +216,22 @@ public class Ch2s extends Ch implements Shoot, Health
         { timer1 --;}
         if (timer1 == 0)
         {
-            timer1 += 5;
+            timer1 += 15;
             if(getRotation()==0)
             {
-                getWorld().addObject(ammo, getX()+40, getY());
+                getWorld().addObject(ammo, getX()+30, getY());
             }
             else if (getRotation()==180)
             {
-                getWorld().addObject(ammo, getX()-40, getY());
+                getWorld().addObject(ammo, getX()-30, getY());
             }
             ammo.setRotation(getRotation());
-
         }
     }
 
     public void fireSlow()
     {
+
         b4 ammo = new b4();
         if(timer2!= 0)
         { timer2 --;}
@@ -205,6 +240,7 @@ public class Ch2s extends Ch implements Shoot, Health
             timer2 += 25;
             if(getRotation()==0)
             {
+
                 getWorld().addObject(ammo, getX()+40, getY());
             }
             else if (getRotation()==180)
@@ -221,7 +257,12 @@ public class Ch2s extends Ch implements Shoot, Health
         super.jump();
     }
 
-    private int speed = 5;
+    public void checkFall()
+    {
+        super.checkFall();
+    }
+
+    private int speed = 4;
     public void moveRight()
     {
         setLocation ( getX() + speed, getY() );
@@ -230,11 +271,6 @@ public class Ch2s extends Ch implements Shoot, Health
     public void moveLeft()
     {
         setLocation ( getX() - speed, getY() );
-    }
-
-    public void checkFall()
-    {
-        super.checkFall();
     }
 
     public boolean onGround()

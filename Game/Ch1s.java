@@ -1,10 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, and Greenfoot)
 
-/**
- * The class Mover provides some basic movement methods. Use this as a superclass
- * for other actors that should be able to move left and right, jump up and fall 
- * down.
- */
 public class Ch1s extends Ch implements Shoot, Health
 {
     private boolean jumping;
@@ -23,6 +18,27 @@ public class Ch1s extends Ch implements Shoot, Health
         Change();
         super.act();
         DeathxTwo();
+        if(getWorld()!=null)
+        {
+
+            if (getY()>=getWorld().getHeight()-5)
+            {
+                for(int i=100; i>0;i--)
+                {
+                    loseHealth();
+                }
+                if (health <= 0)
+                {
+                    World world;
+                    world = getWorld();
+                   
+                    GameOver go = new GameOver();
+                    world.addObject(go,500,500);
+                     getWorld().removeObject(this);
+                    Greenfoot.stop();
+                }
+            }
+        }
     }
 
     public void gainHealth()
@@ -78,7 +94,13 @@ public class Ch1s extends Ch implements Shoot, Health
             }
             if (health <= 0)
             {
-                getWorld().removeObject(this);
+                World world;
+                world = getWorld();
+               
+                GameOver go = new GameOver();
+                world.addObject(go,500,500);
+                 getWorld().removeObject(this);
+                Greenfoot.stop();
             }
         }
     }
@@ -99,7 +121,13 @@ public class Ch1s extends Ch implements Shoot, Health
             }
             if (health <= 0)
             {
-                getWorld().removeObject(this);
+                World world;
+                world = getWorld();
+               
+                GameOver go = new GameOver();
+                world.addObject(go,500,500);
+                 getWorld().removeObject(this);
+                Greenfoot.stop();
             }
         }
     }
@@ -120,7 +148,13 @@ public class Ch1s extends Ch implements Shoot, Health
             }
             if (health <= 0)
             {
-                getWorld().removeObject(this);
+                World world;
+                world = getWorld();
+              
+                GameOver go = new GameOver();
+                world.addObject(go,500,500);
+                 getWorld().removeObject(this);
+                Greenfoot.stop();
             }
         }
     }
@@ -177,7 +211,7 @@ public class Ch1s extends Ch implements Shoot, Health
         { timer1 --;}
         if (timer1 == 0)
         {
-            timer1 += 5;
+            timer1 += 15;
             if(getRotation()==0)
             {
                 getWorld().addObject(ammo, getX()+30, getY());

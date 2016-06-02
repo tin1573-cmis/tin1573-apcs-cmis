@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class SuperCh2 here.
+ * Write a description of class SuperCh1 here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
@@ -12,59 +12,50 @@ public class SuperCh2 extends SuperCh implements Shoot, Health
     private boolean jumping;
     private int vSpeed = 0;
     private int health = 100;
-    int timer2 = 0;
+
     int timer1 = 0;
-    int timer3 = 100;
+    int timer2 = 0;
     public void act() 
     {
         checkKeys();        
-        super.act();
         getHealth();
         regen();
         dead();
         dead2();
-        Change();
+        super.act();
         DeathxTwo();
-    }
-
-    private void Change()
-    {
-        if(timer3!= 0)
-        { timer1 --;}
-        if (timer3 == 0)
+        if(getWorld()!=null)
         {
-            timer1 += 5;
-            getWorld().addObject(new Ch2s(), getX(), getY());
-            getWorld().removeObject(this);
+
+            if (getY()>=getWorld().getHeight()-5)
+            {
+                for(int i=100; i>0;i--)
+                {
+                    loseHealth();
+                }
+            }
         }
     }
 
-    public int getHealth()
-    {
-        return health;
-    }
     private void DeathxTwo()
     {
-        if (isTouching(FallingObject.class))
+        if(getWorld()!=null)
         {
-            int h=health/2;
-            for(int i = 0; i<h ; i++)
+            if (isTouching(FallingObject.class))
             {
-                loseHealth();
+                int h=health/2;
+                for(int i = 0; i<h ; i++)
+                {
+                    loseHealth();
+                }
+                Actor actor = getOneIntersectingObject(b2.class);
+                getWorld().removeObject(actor);
             }
-            Actor actor = getOneIntersectingObject(b2.class);
-            getWorld().removeObject(actor);
+            if (health <= 0)
+            {
+                getWorld().removeObject(this);
+            }
         }
-        if (health <= 0)
-        {
-            getWorld().removeObject(this);
-        }
-    }
-    public void loseHealth()
-    {
-
-        this.health +=-1;
-
     }
 
     public void gainHealth()
@@ -82,8 +73,21 @@ public class SuperCh2 extends SuperCh implements Shoot, Health
         }
     }
 
-    public void dead()
+    public int getHealth()
     {
+        return health;
+    }
+
+    public void loseHealth()
+    {
+
+        this.health +=-1;
+
+    }    
+
+    public void dead2()
+    {
+
         if (isTouching(b3.class))
         {
             loseHealth();
@@ -91,27 +95,29 @@ public class SuperCh2 extends SuperCh implements Shoot, Health
             loseHealth();
             loseHealth();
             loseHealth();
-            Actor actor = getOneIntersectingObject(b3.class);
+            Actor actor = getOneIntersectingObject(b4.class);
             getWorld().removeObject(actor);
         }
+
+    }
+
+    public void die()
+    {
         if (health <= 0)
         {
             getWorld().removeObject(this);
         }
     }
 
-    public void dead2()
+    public void dead()
     {
         if (isTouching(b1.class))
         {
             loseHealth();
-            Actor actor = getOneIntersectingObject(b1.class);
+            Actor actor = getOneIntersectingObject(b2.class);
             getWorld().removeObject(actor);
         }
-        if (health <= 0)
-        {
-            getWorld().removeObject(this);
-        }
+
     }
 
     private void checkKeys()
@@ -133,6 +139,7 @@ public class SuperCh2 extends SuperCh implements Shoot, Health
                 jump();
             }
         }
+
         if (Greenfoot.isKeyDown("f") )
         {
             fireFast();
@@ -141,7 +148,6 @@ public class SuperCh2 extends SuperCh implements Shoot, Health
         {
             fireSlow();
         }
-
     }    
 
     public void fireFast()
@@ -155,19 +161,19 @@ public class SuperCh2 extends SuperCh implements Shoot, Health
             timer1 += 5;
             if(getRotation()==0)
             {
-                getWorld().addObject(ammo, getX()+40, getY());
+                getWorld().addObject(ammo, getX()+30, getY());
             }
             else if (getRotation()==180)
             {
-                getWorld().addObject(ammo, getX()-40, getY());
+                getWorld().addObject(ammo, getX()-30, getY());
             }
             ammo.setRotation(getRotation());
-
         }
     }
 
     public void fireSlow()
     {
+
         b4 ammo = new b4();
         if(timer2!= 0)
         { timer2 --;}
@@ -176,6 +182,7 @@ public class SuperCh2 extends SuperCh implements Shoot, Health
             timer2 += 25;
             if(getRotation()==0)
             {
+
                 getWorld().addObject(ammo, getX()+40, getY());
             }
             else if (getRotation()==180)
@@ -192,7 +199,12 @@ public class SuperCh2 extends SuperCh implements Shoot, Health
         super.jump();
     }
 
-    private int speed = 5;
+    public void checkFall()
+    {
+        super.checkFall();
+    }
+
+    private int speed = 4;
     public void moveRight()
     {
         setLocation ( getX() + speed, getY() );
@@ -201,11 +213,6 @@ public class SuperCh2 extends SuperCh implements Shoot, Health
     public void moveLeft()
     {
         setLocation ( getX() - speed, getY() );
-    }
-
-    public void checkFall()
-    {
-        super.checkFall();
     }
 
     public boolean onGround()
@@ -249,4 +256,6 @@ public class SuperCh2 extends SuperCh implements Shoot, Health
             return true;
         }
     }
+
 }
+

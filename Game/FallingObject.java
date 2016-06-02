@@ -16,7 +16,7 @@ public class FallingObject extends Ammo
     public void act() 
     {
         checkFall();
-        if(isTouching(Ground.class)||isTouching(FallingObject.class)||isTouching(drop.class))
+        if(isTouching(Ground.class)||isTouching(FallingObject.class)||isTouching(drop.class)||isAtEdge())
         {
              getWorld().removeObject(this);
         }

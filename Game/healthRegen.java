@@ -16,38 +16,57 @@ public class healthRegen extends drop
     private int acceleration = 1;
     private int speed = 4;
     public void act() 
-    {
+    { 
+        if(getX()>=0)
+        {
+            super.act();
 
-        checkFall();
-
+            checkFall();
+        }
     }
 
     public boolean onGround()
-    {
-        Object under = getOneObjectAtOffset(0, getImage().getHeight()/2-8 , null);
-        return under != null;
+    { 
+        int x =1;
+        if(getWorld()!=null)
+        {
+            Object under = getOneObjectAtOffset(0, getImage().getHeight()/2-8 , null);
+            if (under != null)
+            {
+                x=0;
+            }
+            else
+            {
+                x=1;
+            }
+        }
+        return x!=1;
     }
 
     public void fall()
     {
-        setLocation(getX(), getY() + vSpeed);
-        if(vSpeed <=9)
+        if(getWorld()!=null)
         {
-            vSpeed = vSpeed + acceleration;
+            setLocation(getX(), getY() + vSpeed);
+            if(vSpeed <=9)
+            {
+                vSpeed = vSpeed + acceleration;
+            }
         }
-
-
     }
 
     public void checkFall()
     {
-        if(onGround())
+        if(getWorld()!=null)
         {
-            vSpeed = 0;
-        }
-        else
-        {
-            fall();
+            if(onGround())
+            {
+                vSpeed = 0;
+            }
+            else
+            {
+                fall();
+            }
         }
     }
 }

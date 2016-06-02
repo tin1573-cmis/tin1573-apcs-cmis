@@ -27,22 +27,6 @@ public class Scene1 extends World
      */
     private void prepare()
     {
-        g1 ground = new g1();
-        addObject(ground,50,600);
-        g1 ground2 = new g1();
-        addObject(ground2,200,600);
-        g1 ground3 = new g1();
-        addObject(ground3,350,600);
-        g1 ground4 = new g1();
-        addObject(ground4,500,600);
-        g1 ground5 = new g1();
-        addObject(ground5,650,600);
-        g1 ground6 = new g1();
-        addObject(ground6,800,600);
-        g1 ground7 = new g1();
-        addObject(ground7,950,600);
-        g1 ground8 = new g1();
-        addObject(ground8,1100,600);
 
         health1 health1 = new health1();
         addObject(health1,51,40);
@@ -62,6 +46,49 @@ public class Scene1 extends World
         addObject(health4,400,10);
         health3 health3 = new health3();
         addObject(health3,600,10);
+
+        g2 g2 = new g2();
+        addObject(g2,967,394);
+        g2 g22 = new g2();
+        addObject(g22,827,129);
+        g2 g23 = new g2();
+        addObject(g23,222,353);
+        g2 g24 = new g2();
+        addObject(g24,467,134);
+
+        g1 g19 = new g1();
+        addObject(g19,60,234);
+        g1 g110 = new g1();
+        addObject(g110,317,462);
+        g1 g111 = new g1();
+        addObject(g111,164,460);
+        g1 g112 = new g1();
+        addObject(g112,969,158);
+        g1 g113 = new g1();
+        addObject(g113,911,348);
+        g1 g17 = new g1();
+        addObject(g17,746,489);
+        g1 g18 = new g1();
+        addObject(g18,601,484);
+        g1 g20 = new g1();
+        addObject(g20,478,347);
+
+        g3 g3 = new g3();
+        addObject(g3,737,445);
+        g3 g32 = new g3();
+        addObject(g32,280,419);
+        g3 g33 = new g3();
+        addObject(g33,1032,124);
+
+        ch1s.setLocation(220,140);
+        ch2s.setLocation(796,420);
+        ch2s.setLocation(794,446);
+        ch1s.setLocation(187,171);
+
+        blackHole blackhole = new blackHole();
+        addObject(blackhole,624,155);
+        ch2s.setLocation(636,416);
+        ch1s.setLocation(57,162);
     }
     private int time =100;
     private int time2=100;

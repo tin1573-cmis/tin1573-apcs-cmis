@@ -1,6 +1,5 @@
 #BlueJ class context
 comment0.target=Ch1s
-comment0.text=\r\n\ The\ class\ Mover\ provides\ some\ basic\ movement\ methods.\ Use\ this\ as\ a\ superclass\r\n\ for\ other\ actors\ that\ should\ be\ able\ to\ move\ left\ and\ right,\ jump\ up\ and\ fall\ \r\n\ down.\r\n
 comment1.params=
 comment1.target=void\ act()
 comment10.params=

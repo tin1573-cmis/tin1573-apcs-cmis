@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class drop extends Actor
+public abstract class drop extends Actor
 {
     /**
      * Act - do whatever the drop wants to do. This method is called whenever
@@ -14,6 +14,11 @@ public class drop extends Actor
      */
     public void act() 
     {
-        // Add your action code here.
+        World world=(World)getWorld();
+        
+        if (isAtEdge())
+        {
+            world.removeObject(this);
+        }
     }    
 }
